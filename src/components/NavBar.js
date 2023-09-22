@@ -8,7 +8,7 @@ import {
   useSetCurrentUser,
 } from "../context/CurrentUserContext";
 import Avatar from "./Avatar";
-import axios from 'axios';
+import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
@@ -19,7 +19,7 @@ const NavBar = () => {
 
   const handleSignOut = async () => {
     try {
-      await axios.post("/dj-rest-auth/logout/");
+      await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
     } catch (err) {
       console.log(err);
@@ -59,10 +59,11 @@ const NavBar = () => {
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+        <Avatar src={`${currentUser?.profile_image}.jpg`} text="Profile" height={40} />
       </NavLink>
     </>
   );
+  
   const loggedOutIcons = (
     <>
       <NavLink
@@ -86,7 +87,7 @@ const NavBar = () => {
     <Navbar expanded={expanded} className={styles.NavBar} expand="md" fixed="top">
       <Container>
         <NavLink to="/">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <img src={moments_logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
