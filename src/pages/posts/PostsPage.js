@@ -10,7 +10,7 @@ import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
-import NoResults from '../../assets/no-results.png';
+import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
 
 function PostsPage({ message, filter = "" }) {
@@ -21,13 +21,14 @@ function PostsPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/${filter}`);
+        const { data } = await axiosReq.get(`/posts/?${filter}`);
         setPosts(data);
         setHasLoaded(true);
       } catch (error) {
         console.log(error);
       }
     };
+
     setHasLoaded(false);
     fetchPosts();
   }, [filter, pathname]);
@@ -39,13 +40,13 @@ function PostsPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {posts.results.length ? (
-                posts.results.map((post) => (
-                  <Post key={post.id} {...post} setPosts={setPosts} />
-                ))
+              posts.results.map((post) => (
+                <Post key={post.id} {...post} setPosts={setPosts} />
+              ))
             ) : (
-                <Container className={appStyles.Content}>
-                    <Asset src={NoResults} message={message} />
-                </Container>
+              <Container className={appStyles.Content}>
+                <Asset src={NoResults} message={message} />
+              </Container>
             )}
           </>
         ) : (
