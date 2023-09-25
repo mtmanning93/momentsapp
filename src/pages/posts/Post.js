@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../context/CurrentUserContext";
-import { Card, Media, Overlay, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -59,7 +59,7 @@ const Post = (props) => {
 
   const handleUnlike = async () => {
     try {
-      const { data } = await axiosRes.delete(`/likes/${like_id}/`);
+      await axiosRes.delete(`/likes/${like_id}/`);
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {

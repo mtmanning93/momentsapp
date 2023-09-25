@@ -1,5 +1,4 @@
 import { axiosReq } from "../api/axiosDefaults"
-import { CurrentUserContext } from "../context/CurrentUserContext"
 
 export const fetchMoreData = async (resource, setResource) => {
     try {
