@@ -18,7 +18,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 import { axiosReq } from "../../api/axiosDefaults";
 
-function PostCreateForm() {
+function PostEditForm() {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -169,4 +169,4 @@ function PostCreateForm() {
   );
 }
 
-export default PostCreateForm;
+export default PostEditForm;
