@@ -11,7 +11,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 import PopularProfiles from "./PopularProfiles";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../context/CurrentUserContext";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
