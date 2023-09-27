@@ -23,20 +23,20 @@ export function ProfileEditDropdown({ id }) {
       <Dropdown.Toggle as={ThreeDots} />
       <Dropdown.Menu>
         <Dropdown.Item
-          onClick={() => history.push(`/profiles/${id}/edit`)}
+          onClick={() => history.push(`/projects/${id}/edit`)}
           aria-label="edit-profile"
         >
           <i className="fas fa-edit" /> edit profile
         </Dropdown.Item>
         <Dropdown.Item
-          onClick={() => history.push(`/profiles/${id}/edit/username`)}
+          onClick={() => history.push(`/projects/${id}/edit/username`)}
           aria-label="edit-username"
         >
           <i className="far fa-id-card" />
           change username
         </Dropdown.Item>
         <Dropdown.Item
-          onClick={() => history.push(`/profiles/${id}/edit/password`)}
+          onClick={() => history.push(`/projects/${id}/edit/password`)}
           aria-label="edit-password"
         >
           <i className="fas fa-key" />
