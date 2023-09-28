@@ -61,7 +61,7 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         className={styles.NavLink}
-        to={`/profiles/${currentUser?.profile_id}`}
+        to={`/projects/${currentUser?.profile_id}`}
       >
         <Avatar
           src={`${currentUser?.profile_image}.jpg`}
